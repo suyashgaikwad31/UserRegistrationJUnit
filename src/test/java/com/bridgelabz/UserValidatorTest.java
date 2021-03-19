@@ -29,5 +29,11 @@ import org.junit.jupiter.api.Test;
         boolean result = UserValidator.validateLastName("Ga");
         Assertions.assertEquals(false,result);
     }
+    @Test
+     public void givenEmail_WhenProper_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = UserValidator.validateEmail("abc.xyz@bl.co.in");
+        Assertions.assertEquals(true,result);
+    }
 }
 
