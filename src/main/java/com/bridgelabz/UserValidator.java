@@ -10,6 +10,7 @@ public class UserValidator {
     private static final String MOB_NUMBER = "^[1-9]{2}\\s{0,1}[0-9]{5}[0-9]{5}$";
     private static final String PASSWORDRULE1 = "[a-z]{8}";
     private static final String PASSWORDRULE2 =  "[a-z A-Z]{8}";
+    private static final String PASSWORDRULE3 = "[0-9 a-z A-Z]{8}";
 
     public static boolean validateFirstName(String fname) {
         Pattern pattern = Pattern.compile(FIRST_NAME_PATTERN);
@@ -38,5 +39,10 @@ public class UserValidator {
     public static boolean validatePasswordrule2(String password2) {
         Pattern pattern = Pattern.compile(PASSWORDRULE2);
         return pattern.matcher(password2).matches();
+    }
+
+    public static boolean validatePasswordRule3(String password3) {
+        Pattern pattern = Pattern.compile(PASSWORDRULE3);
+        return pattern.matcher(password3).matches();
     }
 }
