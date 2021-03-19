@@ -54,5 +54,12 @@ import org.junit.jupiter.api.Test;
         boolean result = UserValidator.validatePasswordRule1("jdhuihjn");
         Assertions.assertEquals(true,result);
     }
+    @Test
+    public void givenPasswordRule2_WhenProper_ShouldReturnTrue(){
+        UserValidator validator = new UserValidator();
+        boolean result = UserValidator.validatePasswordrule2("jdFuiOjn");
+        Assertions.assertEquals(true,result);
+
+    }
 }
 
