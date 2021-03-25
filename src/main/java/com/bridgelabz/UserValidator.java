@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -18,6 +19,8 @@ public class UserValidator {
     public static boolean validateFirstName(String fname) {
         Pattern pattern = Pattern.compile(FIRST_NAME_PATTERN);
         return pattern.matcher(fname).matches();
+
+
     }
     public static boolean validateLastName(String lname) {
         Pattern pattern = Pattern.compile(LAST_NAME_PATTERN);
@@ -54,14 +57,49 @@ public class UserValidator {
         return pattern.matcher(password4).matches();
     }
 
-
-    public boolean validateEmailAddress(String email2Test) {
-        Pattern pattern = Pattern.compile(email2Test);
-        return pattern.matcher(email2Test).matches();
+    public static String validatefirstname(String fname) {
+        String firstnamepattern = "^[A-Z]{1}[a-z]{3,}$";
+        if (Pattern.matches(firstnamepattern, fname))
+            return "Happy";
+        else
+            return "Sad";
     }
 
 
-    public static void main(String[] args) {
+    public static String validatelastname(String lname) {
+        String lastnamepattern = "^[A-Z]{1}[a-z]{3,}$";
+        if (Pattern.matches(lastnamepattern, lname))
+            return "Happy";
+        else
+            return "Sad";
+    }
+
+    public static String validateemail(String email) {
+        String emailnamepattern = "[0-9 a-z A-z]+([._+-][0-9 a-z A-Z]+)*"+"@([0-9 a-z A-Z][-]?)+[.][a-z A-Z]{2,4}([.][a-z A-Z]{2,4})?$";
+        if (Pattern.matches(emailnamepattern, email))
+            return "Happy";
+        else
+            return "Sad";
+    }
+
+    public static String validatelMobNumber(String mobnum) {
+        String mobnumpattern = "^[1-9]{2}\\s{0,1}[0-9]{5}[0-9]{5}$";
+        if (Pattern.matches(mobnumpattern, mobnum))
+            return "Happy";
+        else
+            return "Sad";
+
+
+    }
+    public static String validatPassword(String password) {
+        String Passwordpattern = "[0-9 a-z A-Z]{8}";
+        if (Pattern.matches(Passwordpattern, password))
+            return "Happy";
+        else
+            return "Sad";
+    }
+
+   public static void main(String[] args) {
         ArrayList<String>emails = new ArrayList<String>();
         emails.add("abc@yahoo.com");
         emails.add("abc-100@yahoo.com");
@@ -87,4 +125,14 @@ public class UserValidator {
                 System.out.println("Valid");
         }
     }
-}
+
+
+
+
+    public boolean validateEmailAddress(String email2Test) {
+        Pattern pattern = Pattern.compile(email2Test);
+        return pattern.matcher(email2Test).matches();
+    }
+        
+    
+    }
